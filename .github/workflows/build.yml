@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: unzip -q source.zip -d unzipped
+      - run: unzip -q CursedValleyCore.zip -d unzipped
       - uses: actions/setup-java@v4
         with:
           java-version: '25'
