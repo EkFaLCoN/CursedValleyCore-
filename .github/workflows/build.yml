@@ -5,13 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: unzip -q source.zip -d unzipped
       - uses: actions/setup-java@v4
         with:
           java-version: '25'
           distribution: temurin
-          cache: maven
       - run: mvn -B clean package
+        working-directory: unzipped/CursedValleyCore
       - uses: actions/upload-artifact@v4
         with:
           name: CursedValleyCore
-          path: target/*.jar
+          path: unzipped/CursedValleyCore/target/*.jar
