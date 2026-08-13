@@ -9,9 +9,9 @@ jobs:
         with:
           java-version: '25'
           distribution: temurin
-          cache: maven
       - run: mvn -B clean package
+        working-directory: CursedValleyCore
       - uses: actions/upload-artifact@v4
         with:
           name: CursedValleyCore
-          path: target/*.jar
+          path: CursedValleyCore/target/*.jar
